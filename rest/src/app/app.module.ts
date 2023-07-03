@@ -7,6 +7,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { UserDetailComponent } from './components/user/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,17 @@ import { AppRoutingModule } from './app.routes';
     NavbarComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService,
+      { dataEncapsulation : false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
