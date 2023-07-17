@@ -5,9 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { UserDetailComponent } from './components/user/user-detail.component';
 import { ReqresService } from './services/reqres.service';
 import { User } from './user';
+import { UserDetailComponent } from './components/user/user-detail.component';
 
 const ROUTES: Routes = [
     { path: '', component: HomeComponent },
